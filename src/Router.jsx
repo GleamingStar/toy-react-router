@@ -15,9 +15,10 @@ export const Router = ({ children }) => {
   return <HistoryContext.Provider value={{ pathname, setPathname }}>{children}</HistoryContext.Provider>;
 };
 
-export const Route = ({ children, path }) => {
+export const Route = ({ children, path, exact }) => {
   const { pathname } = useContext(HistoryContext);
-  return pathname === path ? <>{children}</> : <></>;
+  const isRender = exact ? pathname === path : pathname.includes(path === "*" ? "" : path);
+  return isRender ? <>{children}</> : <></>;
 };
 
 export const Link = ({ children, to }) => {

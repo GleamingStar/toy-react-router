@@ -4,14 +4,14 @@ import { Router, Route, Link } from "./Router";
 const App = () => {
   return (
     <Router>
-      <Route path="/">
-        <Link to="/1">메인페이지</Link>
+      <Route path="/" exact>
+        <Link to="/1">Mainpage</Link>
       </Route>
       <Route path="/1">
-        <Link to="/2">페이지 1</Link>
+        <Link to="/2">page 1</Link>
       </Route>
       <Route path="/2">
-        <Link to="/">페이지 2</Link>
+        <Link to="/">page 2</Link>
       </Route>
     </Router>
   );
