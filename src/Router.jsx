@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 const { location, history } = window;
 
-const Context = React.createContext();
+const HistoryContext = React.createContext();
 
 export const Router = ({ children }) => {
   const [pathname, setPathname] = useState(location.pathname);
@@ -11,19 +11,17 @@ export const Router = ({ children }) => {
     window.addEventListener("popstate", changePath);
     return () => window.removeEventListener("popstate", changePath);
   }, []);
-  console.log(children)
-  console.log(pathname)
 
-  return <Context.Provider value={{ pathname, setPathname }}>{children}</Context.Provider>;
+  return <HistoryContext.Provider value={{ pathname, setPathname }}>{children}</HistoryContext.Provider>;
 };
 
 export const Route = ({ children, path }) => {
-  const { pathname } = useContext(Context);
+  const { pathname } = useContext(HistoryContext);
   return pathname === path ? <>{children}</> : <></>;
 };
 
 export const Link = ({ children, to }) => {
-  const { setPathname } = useContext(Context);
+  const { setPathname } = useContext(HistoryContext);
   const push = () => {
     history.pushState({}, "", to);
     setPathname(to);
