@@ -39,11 +39,13 @@ export default App;
   - Switch : Renders the first child `<Route>` that matches the location.
   - Link : Acts similar to `<a>` tag without refresh.
     - to: string
+  - Redirect : Rendering a <Redirect> will navigate to a new location.
+    - to: string
 
 ### To be updated
 - Component
   - [X] Switch
-  - [ ] Redirect
+  - [X] Redirect
 - feature
   - [X] exact path in Route
   - [X] path="*" in Route
