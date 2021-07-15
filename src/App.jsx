@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Link, Switch } from "./Router";
+import { Router, Route, Link, Switch, Redirect } from "./Router";
 
 const App = () => {
   return (
@@ -13,6 +13,9 @@ const App = () => {
         </Route>
         <Route path="/2">
           <Link to="/">page 2</Link>
+        </Route>
+        <Route path="/5">
+          <Redirect to="/" />
         </Route>
         <Route> No Match </Route>
       </Switch>

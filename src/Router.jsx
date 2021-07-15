@@ -38,3 +38,12 @@ export const Link = ({ children, to }) => {
   };
   return <div onClick={push}>{children}</div>;
 };
+
+export const Redirect = ({ to }) => {
+  const { setPathname } = useContext(RouterContext);
+  useEffect(() => {
+    history.pushState({}, "", to);
+    setPathname(to);
+  }, []);
+  return <></>;
+};
