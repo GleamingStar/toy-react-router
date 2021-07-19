@@ -1,18 +1,21 @@
 import React from "react";
-import { Router, Route, Link, Switch, Redirect } from "./Router";
+import { Router, Route, Link, Switch, Redirect } from "../src/Router";
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Link to="/1">Mainpage</Link>
+          This is MainPage
+          <Link to="/1">to page 1</Link>
         </Route>
         <Route path="/1">
-          <Link to="/2">page 1</Link>
+          This is Page 1
+          <Link to="/2">to page 2</Link>
         </Route>
         <Route path="/2">
-          <Link to="/">page 2</Link>
+          This is Page 2
+          <Link to="/">to mainpage</Link>
         </Route>
         <Route path="/5">
           <Redirect to="/" />

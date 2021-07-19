@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: "./demo/index.tsx",
   output: {
     filename: "app.js",
     path: path.resolve(__dirname, "dist"),
@@ -23,13 +23,13 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     host: "localhost",
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 8080,
     open: true,
     historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: "demo/index.html",
     }),
   ],
 };
