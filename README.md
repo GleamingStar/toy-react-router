@@ -1,25 +1,37 @@
 # toy-react-router
 
-#### react-router-dom-clone library for practice npm publish
+#### Use routing by component in React SPA
+
+### Install
+```
+$ npm i toy-react-router
+or
+$ yarn add toy-react-router
+```
 
 ### Guide
+- Demo
+  - [Practice using toy-react-router in CodeSandbox](https://codesandbox.io/s/toy-react-router-playground-0b997)
 - Quick Start
 ```js
 import React from "react";
-import { Router, Route, Link, Switch } from "./Router";
+import { Router, Route, Link, Switch } from "toy-react-router";
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Link to="/1">Mainpage</Link>
+          This is MainPage
+          <Link to="/1">to page 1</Link>
         </Route>
         <Route path="/1">
-          <Link to="/2">page 1</Link>
+          This is Page 1
+          <Link to="/2">to page 2</Link>
         </Route>
         <Route path="/2">
-          <Link to="/">page 2</Link>
+          This is Page 2
+          <Link to="/">to mainpage</Link>
         </Route>
         <Route> No Match </Route>
       </Switch>
@@ -29,7 +41,8 @@ const App = () => {
 
 export default App;
 ```
-![GIF 2021-07-12 오후 2-24-18](https://user-images.githubusercontent.com/70461368/125235162-fa212e00-e31c-11eb-80f7-48778b1b3fe8.gif)
+![GIF 2021-07-19 오후 4-14-26](https://user-images.githubusercontent.com/70461368/126118333-ae2cb293-95d3-4704-b6d3-a284073d289b.gif)
+
 - Component
   - Router : The common low-level interface for all router components.
   - Route : Render when its path matches the current URL.
@@ -42,6 +55,9 @@ export default App;
   - Redirect : Rendering a <Redirect> will navigate to a new location.
     - to: string
 
+### Misc
+- This library get inspired by [react-router-dom](https://reactrouter.com/) and just clone it
+- All components in thie library implemented by me, so many features acts be inferior to origin react-router, such as overlapping `<Route>` component
 ### To be updated
 - Component
   - [X] Switch
@@ -56,5 +72,5 @@ export default App;
   - [X] add how to use components
   - [ ] add some GIF of each component demo
 - Apply TypeScript
-  - [ ] convert Router.jsx to Router.tsx
-  - [ ] npm publish with TypeScript
+  - [X] convert Router.jsx to Router.tsx
+  - [X] npm publish with TypeScript
