@@ -6,7 +6,7 @@
 - Quick Start
 ```js
 import React from "react";
-import { Router, Route, Link, Switch } from "./Router";
+import { Router, Route, Link, Switch } from "toy-react-router";
 
 const App = () => {
   return (

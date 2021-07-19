@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   output: {
     filename: "app.js",
     path: path.resolve(__dirname, "dist"),
@@ -14,18 +14,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        use: ["babel-loader"],
       },
     ],
   },
   devtool: "inline-source-map",
   devServer: {
     host: "localhost",
-    port: process.env.PORT || 8080,
+    port: process.env.PORT || 3000,
     open: true,
     historyApiFallback: true,
   },
