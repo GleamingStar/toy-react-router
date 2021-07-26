@@ -27,7 +27,6 @@ const isRender = (currentPath: string, routePath: string | undefined, isExact: b
 
 export const Switch = ({ children }: { children: ReactNode }) => {
   const { pathname } = useContext(RouterContext);
-  console.log(children);
   return <>{(children as Array<ReactNode>)?.find(({ props }: any) => isRender(pathname, props.path, props.exact))}</>;
 };
 
