@@ -1,6 +1,6 @@
 {
   "name": "toy-react-router",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react-router-dom clone for practice making library",
   "module": "dist/Router.js",
   "main": "dist/Router.js",
