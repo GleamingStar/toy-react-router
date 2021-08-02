@@ -1,4 +1,3 @@
-import React from "react";
 import { Router, Route, Link, Switch, Redirect } from "../src/Router";
 
 const App = () => {
